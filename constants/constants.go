@@ -327,11 +327,18 @@ var CHARGING_STATE = map[byte]string{
 	5: "Fault",
 }
 
+const (
+	OI_MODE_OFF     byte = 0
+	OI_MODE_PASSIVE      = 1
+	OI_MODE_SAFE         = 2
+	OI_MODE_FULL         = 3
+)
+
 var OI_MODE = map[byte]string{
-	0: "Off",
-	1: "Passive",
-	2: "Safe",
-	3: "Full",
+	OI_MODE_OFF:     "Off",
+	OI_MODE_PASSIVE: "Passive",
+	OI_MODE_SAFE:    "Safe",
+	OI_MODE_FULL:    "Full",
 }
 
 var SENSORS_NAME = map[byte]string{
