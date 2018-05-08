@@ -62,9 +62,10 @@ func (this *Roomba) PulseBRC() {
 		time.Sleep(1 * time.Second)
 		this.brcPin.DigitalWrite(1)
 		// When roomba is docked, it seems to go into sleep where pulsing BRC does
-		// not wake it up. SeekDock button seems to keep it up.
+		// not wake it up. Pressing hour button seems to keep it up.
 		// TODO: only press this button when already docked and charging.
-		this.ButtonPush(0x10)
+		// Experimenting to see if this is actually true
+		//this.ButtonPush(0x10)
 	}
 }
 
