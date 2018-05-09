@@ -66,6 +66,9 @@ func (this *Roomba) PulseBRC() {
 		// TODO: only press this button when already docked and charging.
 		// Experimenting to see if this is actually true
 		//this.ButtonPush(0x10)
+		// Looks like serial port goes to sleep if there is no querying. So periodic
+		// querying to see if this keeps it up.
+		this.QueryList([]byte{35})
 	}
 }
 
