@@ -64,11 +64,10 @@ func (this *Roomba) PulseBRC() {
 		// When roomba is docked, it seems to go into sleep where pulsing BRC does
 		// not wake it up. Pressing hour button seems to keep it up.
 		// TODO: only press this button when already docked and charging.
-		// Experimenting to see if this is actually true
-		//this.ButtonPush(0x10)
-		// Looks like serial port goes to sleep if there is no querying. So periodic
-		// querying to see if this keeps it up.
-		this.QueryList([]byte{35})
+		// Looks like serial port goes to sleep if there is no querying.
+		// Pushing the button and period querying seems to keep the serial open.
+		this.ButtonPush(0x10)
+		this.QueryList([]byte{35, 36, 37})
 	}
 }
 
