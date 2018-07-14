@@ -5,11 +5,12 @@ package constants
 const (
 
 	// Startup OpCodes.
-	START   = 128
-	BAUD    = 129
-	STOP    = 173
-	RESET   = 7
-	CONTROL = 130
+	RoombaRadius float64 = 117.5 // Radius between roomba center and wheel in mm.
+	START                = 128
+	BAUD                 = 129
+	STOP                 = 173
+	RESET                = 7
+	CONTROL              = 130
 
 	// Mode OpCodes.
 	SAFE = 131
